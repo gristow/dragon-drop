@@ -1,14 +1,10 @@
-import '@babel/polyfill';
-import 'element-qsa-scope';
 import dragula from 'dragula';
 import LiveRegion from 'live-region';
-import createDebug from 'debug';
 import Emitter from 'component-emitter';
 import matches from 'dom-matches';
 import defaults from './lib/defaults';
 import queryAll from './lib/query-all';
 
-const debug = createDebug('drag-on-drop:index');
 const arrayHandler = (containers, userOptions = {}) => {
   const { nested, dragulaOptions = {} } = userOptions;
   const instances = [];
@@ -135,7 +131,7 @@ export default class DragonDrop {
       .initElements(container)
       .mouseEvents();
 
-    debug('dragon initialized: ', this);
+    // log('dragon initialized: ', this);
 
     return this;
   }
@@ -313,7 +309,7 @@ export default class DragonDrop {
   }
 
   announcement(type, item) {
-    debug(`${type} announcement`, item);
+    // log(`${type} announcement`, item);
     const config = this.options.announcement || {};
     const funk = config[type];
 

@@ -1,6 +1,6 @@
 {
   "name": "drag-on-drop",
-  "version": "3.3.2",
+  "version": "3.3.3",
   "description": "Accessible drag and drop list reorder",
   "main": "dist/dragon-drop.js",
   "scripts": {
@@ -12,6 +12,7 @@
     "deploy": "gh-pages -m 'auto commit [ci skip]' -d dist/",
     "dev": "watch-run -p 'lib/**,demo/**,index.js' npm run build",
     "pre-build": "npm run clean && mkdir dist",
+    "serve": "http-server",
     "test": "npm run test:coverage && npm run lint",
     "test:coverage": "nyc --reporter=text npm run test:run",
     "test:run": "tape -r babel-register test/index.js | tap-spec",
@@ -37,6 +38,7 @@
     "debug": "^3.0.0",
     "eslint": "^4.19.1",
     "gh-pages": "^1.0.0",
+    "http-server": "^0.12.1",
     "jsdom": "^11.2.0",
     "jsdom-global": "^3.0.2",
     "nyc": "^11.6.0",
